@@ -12,7 +12,7 @@ return new class extends Migration
             $table->bigIncrements("id");
             $table->string("description",255);
             $table->decimal("value",14,2);
-            $table->string("km",20);
+            $table->string("km",10);
             $table->longText("details");
             $table->unsignedBigInteger("user_id");
             $table->unsignedBigInteger("vehicle_id");
