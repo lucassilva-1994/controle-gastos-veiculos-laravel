@@ -8,10 +8,17 @@ return new class extends Migration
 {
     public function up()
     {
+        Schema::create("files", function(Blueprint $table){
+            $table->bigIncrements("id");
+            $table->unsignedBigInteger("service_id");
+            $table->string("path");
+            
+            $table->foreign("service_id")->references("id")->on("services")->onDelete("cascade");
+        });
     }
     
     public function down()
     {
-        
+        Schema::dropIfExists("files");
     }
 };
