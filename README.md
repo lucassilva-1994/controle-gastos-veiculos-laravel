@@ -1,1 +1,1 @@
-A primeira versão do sistema estará disponível no ambiente de produção no seguinte endereço: https://vehicle.lucassilvasantos.com/
+Projeto atualizado em ambiente de produção no seguinte endereço: https://vehicle.lucassilvasantos.com/
