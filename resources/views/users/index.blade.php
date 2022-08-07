@@ -49,7 +49,7 @@
                     <button type="submit" class="btn btn-success"><i class="bi bi-check-lg"></i> Autenticar</button>
                 </div>
                 <div class="btn-group btn-group-toggle d-flex mb-3" role="group" aria-label="Large button group">
-                    <a href="" class="btn btn-outline-primary">Cadastre-se aqui</a>
+                    <a href="{{route('user.new')}}" class="btn btn-outline-primary">Cadastre-se aqui</a>
                     <a href="" class="btn btn-outline-danger">Redefinir senha</a>
                 </div>
             </form>

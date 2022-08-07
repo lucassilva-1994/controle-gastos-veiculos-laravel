@@ -15,7 +15,8 @@ return new class extends Migration
             $table->string("user",100)->unique();
             $table->string("email",100)->unique();
             $table->string("password",100);
-            $table->string("token",100)->default("null");
+            $table->string("token",100)->nullable();
+            $table->enum("status", ["ACTIVE","INATIVE"])->default("INATIVE");
             $table->timestamps();
         });
     }
