@@ -1,21 +1,7 @@
 @extends("users.layout")
-
+@section("h2","Novo usuário")
 @section("title", "Novo usuário")
 @section("content")
-
-<div class="row justify-content-md-center">
-    <div class="col-sm-12 col-md-12 col-lg-4 bg-light border border-secondary rounded" style="margin-top: 20px; border-radius: 2;">
-        <div class="mt-5">
-            <h2 class="text-center mb-3">Novo usuário</h2>
-            @if ($errors->any())
-            <div class="alert alert-danger">
-                <ul>
-                    @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
-            </div>
-            @endif
             <form action="{{route('user.create')}}" method="POST">
                 @csrf
                 <div class="mt-2 input-group">
@@ -59,9 +45,6 @@
                     <a onclick="history.back();" class="btn btn-outline-danger">Voltar</a>
                 </div>
             </form>
-        </div>
-    </div>
-</div>
 @endsection
 
 

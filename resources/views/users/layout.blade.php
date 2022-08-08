@@ -34,7 +34,33 @@
 </head>
 <body class="bg-light"  style="margin-top: 100px;">
     <div class="container">
-        @yield("content")
+        <div class="row justify-content-md-center">
+            <div class="col-sm-12 col-md-12 col-lg-4 bg-light border border-secondary rounded" style="margin-top: 20px; border-radius: 2;">
+                <div class="mt-5">
+                    <h2 class="text-center mb-3">@yield("h2","Usuário")</h2>
+                    @if ($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                    @endif
+                    @if(session('success'))
+                    <div class="alert alert-success">
+                        {{ session('success') }}
+                    </div>
+                    @endif
+                    @if(session('error'))
+                    <div class="alert alert-danger">
+                        {{ session('error') }}
+                    </div>
+                    @endif
+                </div>
+                @yield("content")
+            </div>
+        </div>
     </div>
     <script src="{{url("js/bootstrap.min.js")}}"></script>
 </body>
