@@ -7,4 +7,5 @@ Route::controller(UsersController::class)->group(function(){
     Route::get("user/new","new")->name("user.new");
     Route::post("user/create", "create")->name("user.create");
     Route::get("/user/validate/{token}","validateUser")->name("user.validate");
+    Route::post("user/auth","auth")->name("user.auth");
 });

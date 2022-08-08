@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\UserRequest;
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 
 class UsersController extends Controller {
@@ -13,6 +15,19 @@ class UsersController extends Controller {
 
     public function new() {
         return view("users.new");
+    }
+    public function auth(Request $request){
+        $request->validate(
+                ["user"=>"required","password" =>"required"],
+                ["user.required" => "Usuário obrigatório.","password.required" => "Senha obrigatória."]);
+        $credentials = ["user" => $request->user,"password"=> $request->password];
+        if(Auth::attempt($credentials)){
+            $user = User::where(["user"=>$request->user])->first();
+            //Criando sessão após a autenticação.
+            session()->put(["user" => $user->user, "id_user" =>$user->id]);
+            return to_route("user.index")->with("success","Usuário autenticado com sucesso.");
+        }
+        return to_route("user.index")->with("error", "Falha na autenticação.");
     }
     //Cadastrando novo usuário
     public function create(UserRequest $request) {

@@ -30,7 +30,7 @@
         </script>
     </script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
-    <title>@yield("title","Controle de gastos de veículos")</title>
+    <title>@yield("title","Gestão de veículos")</title>
 </head>
 <body class="bg-light"  style="margin-top: 100px;">
     <div class="container">

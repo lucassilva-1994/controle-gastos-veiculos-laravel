@@ -25,7 +25,7 @@
                 {{ session('error') }}
             </div>
             @endif
-            <form action="" method="POST">
+            <form action="{{route('user.auth')}}" method="POST">
                 @csrf
                 <div class="input-group mt-2">
                     <label for="user" class="input-group-text"><i class="bi bi-person-fill"></i></label>
